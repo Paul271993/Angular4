@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="contenido">
+        <p *ngIf="ciudadService.estado== true">
+            <!-- Ciudad: {{ciudadService.ciudad.nombre}} <br>
+            Pais: {{ciudadService.ciudad.pais}} <br> -->
+            Ciudad: {{ciudadService.resultado}}
+        </p>
+    </div>
+
+   <div class="contenido">
+       <p *ngIf="ciudadService.ciudades !=null">
+           Ciudades: {{ciudadService.ciudades}}
+       </p>
+   </div>
+    
+    
+</body>
+</html>
+
+
