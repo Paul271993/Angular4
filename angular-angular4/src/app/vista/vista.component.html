@@ -7,19 +7,58 @@
 </head>
 <body>
 
-    <div class="contenido">
+    <!-- <div class="contenido">
         <p *ngIf="ciudadService.estado== true">
-            <!-- Ciudad: {{ciudadService.ciudad.nombre}} <br>
-            Pais: {{ciudadService.ciudad.pais}} <br> -->
+            Ciudad: {{ciudadService.ciudad.nombre}} <br>
+            Pais: {{ciudadService.ciudad.pais}} <br>
             Ciudad: {{ciudadService.resultado}}
         </p>
-    </div>
+    </div> -->
+    <div>
+        <!-- <button type="button" class="btn btn-dark" (click)=getAll(nombre,pais,codigo)>Get all</button> -->
+    
+    <ul>
+        <li *ngFor="let ciudad of ciudadService.ciudades">{{ciudad.nombre}} <br> {{ciudad.pais}} <br> {{ciudad.codigo}}</li>
+    </ul>
+</div>
 
-   <div class="contenido">
-       <p *ngIf="ciudadService.ciudades !=null">
+    
+
+   <!-- <div class="contenido">
+       <p *ngIf="ciudadService.ciudades !=[]">
            Ciudades: {{ciudadService.ciudades}}
        </p>
+   </div> -->
+
+   <div>
+    <input type="text" placeholder="Codigo" #codigo>
+    <button type="button" class="btn btn-dark" (click)=buscarCiudad(codigo)>Get One</button>
+    <ul>
+        <li *ngFor="let ciudad of ciudadService.ciudades">{{ciudad.nombre}} <br> {{ciudad.pais}} <br> {{ciudad.codigo}}</li>
+      
+    </ul>
    </div>
+
+   <div>
+    <input type="text" placeholder="codigoBuscar" #codigoBuscar>
+    <input type="text" placeholder="Nombre" #nombre>
+    <input type="text" placeholder="Pais" #pais>
+    <input type="text" placeholder="Codigo" #codigo>
+    <button type="button" class="btn btn-dark" (click)=actualizarCiudad(codigoBuscar,nombre,pais,codigo)>Edit</button>
+    <!-- <ul>
+        <li *ngFor="let ciudad of ciudadService.ciudades">{{ciudad.nombre}} <br> {{ciudad.pais}} <br> {{ciudad.codigo}}</li>
+      
+    </ul> -->
+   </div>
+
+   <div>
+    <input type="text" placeholder="Codigo" #codigo>
+    <button type="button" class="btn btn-dark" (click)=eliminarCiudad(codigo)>Delete</button>
+    
+   </div>
+
+
+   
     
     
 </body>

@@ -22,16 +22,16 @@ export class FormularioComponent implements OnInit {
   this.ciudadService.nuevaCiudad1(ciudad);
  }
 
- getAll()
- {
-  //  console.log(this.ciudadService.ciudad)
-   this.ciudadService.getAll()
- }
+//  getAll()
+//  {
+//   //  console.log(this.ciudadService.ciudad)
+//    return this.ciudadService.getAll()
+//  }
 
- getOne()
- {
-   this.ciudadService.getOne()
- }
+//  getOne()
+//  {
+//    this.ciudadService.getOne()
+//  }
 
   ngOnInit(): void {
   }
