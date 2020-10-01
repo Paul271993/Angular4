@@ -11,6 +11,8 @@ export class CiudadesServiceService {
   public ciudades: Ciudad[];
   public estado:Boolean;
   public resultado:String;
+  public cambio: boolean;
+  // public ciudadEncontrada: String;
 
 
 
@@ -30,13 +32,51 @@ export class CiudadesServiceService {
   {
     // return this.ciudades
      console.log(this.ciudades)
-     this.ciudades
+    //  this.resultado= "Nombre:"+ this.ciudades[this.ciudades.length-1].nombre + "Pais: "+ this.ciudades[this.ciudades.length-1].pais+ "Codigo:"+ this.ciudades[this.ciudades.length-1].codigo;
+    //  this.ciudades.values
 
-    //  this.resultado= this.ciudades[this.ciudades.length].nombre,this.ciudades[this.ciudades.length].pais,this.ciudades[this.ciudades.length].codigo;
+     
   }
-
-  getOne()
-  {
+  getOne(code:string):Ciudad{
+    let i=0
+    let ciudadEncontrada:Ciudad;
+    while(i<this.ciudades.length){
+   if(code==this.ciudades[i].codigo){
+    ciudadEncontrada=this.ciudades[i];
+    i=this.ciudades.length;
+    console.log(ciudadEncontrada);
+   }i++
+    }
+    return  ciudadEncontrada;
    
   }
+
+ 
+ edit( code:string,ciudad:Ciudad){
+  this.cambio = true;
+  for(let i = 0;i<this.ciudades.length;i++){
+    if(code==this.ciudades[i].codigo){
+         this.ciudades[i]=ciudad;
+      console.log(ciudad);          
+  }
+ } 
+}
+
+delete(code:string){
+// let guardar:Ciudad
+  for(let i = 0;i<this.ciudades.length;i++){
+    // console.log("1")
+    // console.log(code);
+    if(code===this.ciudades[i].codigo){     
+      console.log("2") 
+      // let guardar= this.ciudades[i];
+      this.ciudades.splice(i,1) 
+  }
+ } 
+}
+
+
+
+  
+ 
 }
